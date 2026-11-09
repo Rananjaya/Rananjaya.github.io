@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Rananjaya — Senior Software Engineer specialising in mobile engineering and AI-native software development.">
+  <title>Rananjaya | Senior Software Engineer</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090d18;
+      --surface: #101827;
+      --surface-2: #141f31;
+      --text: #edf2fb;
+      --muted: #a5b2c7;
+      --line: rgba(174, 195, 225, .15);
+      --accent: #79a9ff;
+      --accent-2: #8ce0d0;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background:
+        radial-gradient(ellipse at 85% 0%, rgba(71, 112, 190, .18), transparent 34rem),
+        radial-gradient(ellipse at 0% 35%, rgba(56, 143, 133, .09), transparent 30rem),
+        var(--bg);
+      color: var(--text); font: 16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(18px); background: rgba(9,13,24,.78); border-bottom: 1px solid var(--line); }
+    nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-weight: 750; letter-spacing: -.04em; font-size: 1.1rem; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 24px; color: var(--muted); font-size: .9rem; }
+    .hero { padding: 112px 0 90px; display: grid; grid-template-columns: 1.4fr .6fr; align-items: center; gap: 48px; }
+    .eyebrow { color: var(--accent-2); text-transform: uppercase; letter-spacing: .16em; font-size: .76rem; font-weight: 700; }
+    h1 { font-size: clamp(2.7rem, 6vw, 5.4rem); line-height: 1.03; letter-spacing: -.065em; margin: 18px 0 22px; }
+    h1 .highlight { color: var(--accent); }
+    .lead { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); max-width: 700px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 11px 18px; border-radius: 10px; border: 1px solid var(--line); font-weight: 650; font-size: .92rem; transition: .2s ease; }
+    .btn.primary { background: var(--accent); color: #07101f; border-color: var(--accent); }
+    .btn:hover { transform: translateY(-2px); }
+    .hero-card { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(24,37,58,.92), rgba(13,21,35,.92)); padding: 28px; border-radius: 22px; box-shadow: 0 25px 80px rgba(0,0,0,.22); }
+    .metric { padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .metric:last-child { border: 0; }
+    .metric strong { display: block; font-size: 1.8rem; letter-spacing: -.04em; }
+    .metric span { color: var(--muted); font-size: .88rem; }
+    section { padding: 72px 0; border-top: 1px solid var(--line); }
+    .section-head { margin-bottom: 30px; }
+    .section-head p { color: var(--muted); margin: 6px 0 0; }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -.045em; line-height: 1.15; margin: 0; }
+    h3 { margin: 0 0 8px; letter-spacing: -.02em; }
+    .about-grid, .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .panel { background: rgba(16,24,39,.8); border: 1px solid var(--line); border-radius: 16px; padding: 25px; }
+    .panel p { color: var(--muted); margin: 8px 0 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .chip { border: 1px solid var(--line); background: rgba(255,255,255,.035); color: #d6e1f2; padding: 6px 11px; border-radius: 999px; font-size: .84rem; }
+    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .skill-card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 21px; }
+    .skill-card p { color: var(--muted); font-size: .92rem; margin: 8px 0 0; }
+    .timeline { display: grid; gap: 16px; }
+    .timeline-item { display: grid; grid-template-columns: 190px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .timeline-item:last-child { border: 0; }
+    .timeline-date { color: var(--accent-2); font-size: .88rem; font-weight: 650; }
+    .timeline-item p { color: var(--muted); margin: 7px 0 0; }
+    .project { display: flex; flex-direction: column; min-height: 250px; }
+    .project .tagline { color: var(--accent-2); font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .project p { color: var(--muted); }
+    .project .chips { margin-top: auto; padding-top: 14px; }
+    .education { display: grid; gap: 15px; }
+    .education-item { padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .education-item:last-child { border: 0; }
+    .education-item p { color: var(--muted); margin: 4px 0 0; }
+    .contact { display: flex; flex-wrap: wrap; gap: 12px; }
+    footer { padding: 30px 0 45px; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 760px) {
+      .navlinks { display: none; }
+      .hero { padding: 76px 0 62px; grid-template-columns: 1fr; gap: 28px; }
+      .about-grid, .two-col, .skill-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+      section { padding: 56px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#home">RANANJAYA<span>.</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow">Senior Software Engineer · Sri Lanka</div>
+      <h1>Building thoughtful<br><span class="highlight">mobile experiences</span><br>and intelligent software.</h1>
+      <p class="lead">I'm Rananjaya, a software engineer with 8 years of experience, specialising in mobile application engineering and exploring AI-native engineering.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn" href="https://github.com/Rananjaya" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Professional highlights">
+      <div class="metric"><strong>8 years</strong><span>Software engineering experience</span></div>
+      <div class="metric"><strong>Mobile</strong><span>React Native · Android · iOS</span></div>
+      <div class="metric"><strong>AI-native</strong><span>Agentic systems · Intelligent workflows</span></div>
+    </aside>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Introduction</div><h2>About me</h2></div>
+      <div class="about-grid">
+        <div class="panel">
+          <h3>Engineering with purpose</h3>
+          <p>I build and maintain mobile applications with a focus on reliable user experiences, maintainable architecture and practical engineering solutions. My core experience is in React Native, JavaScript and TypeScript, with work across Android and iOS.</p>
+        </div>
+        <div class="panel">
+          <h3>Exploring what's next</h3>
+          <p>I'm passionate about <strong>AI-native engineering</strong>, exploring agentic systems, AI-assisted development, intelligent workflows and modern AI-driven software architecture. I also have an interest in application security and open-source software.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Capabilities</div><h2>Technical expertise</h2><p>A practical toolkit across mobile, frontend, native platforms and cloud.</p></div>
+      <div class="skill-grid">
+        <article class="skill-card"><h3>Mobile engineering</h3><p>Cross-platform application development and native platform fundamentals.</p><div class="chips"><span class="chip">React Native</span><span class="chip">Android</span><span class="chip">iOS</span><span class="chip">Java</span><span class="chip">Kotlin</span><span class="chip">Swift</span></div></article>
+        <article class="skill-card"><h3>Languages & frontend</h3><p>Building structured, maintainable application interfaces and state flows.</p><div class="chips"><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">React.js</span><span class="chip">Redux</span><span class="chip">RTK Query</span></div></article>
+        <article class="skill-card"><h3>AI-native engineering</h3><p>Exploring AI-assisted engineering practices, agentic workflows and AI-driven architecture.</p><div class="chips"><span class="chip">Claude Code</span><span class="chip">AI agents</span><span class="chip">Agentic workflows</span><span class="chip">AI architecture</span></div></article>
+        <article class="skill-card"><h3>Backend & cloud</h3><p>Experience and working knowledge across backend development and cloud platforms.</p><div class="chips"><span class="chip">Node.js</span><span class="chip">AWS</span><span class="chip">Azure</span></div></article>
+        <article class="skill-card"><h3>Application security</h3><p>Mobile security practices and platform-level protection mechanisms.</p><div class="chips"><span class="chip">SSL pinning</span><span class="chip">Root detection</span><span class="chip">Jailbreak detection</span></div></article>
+        <article class="skill-card"><h3>Engineering practices</h3><p>Collaborative development, code quality, testing and continuous improvement.</p><div class="chips"><span class="chip">Git</span><span class="chip">Code review</span><span class="chip">Testing</span><span class="chip">Open source</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Career</div><h2>Professional experience</h2><p>Career summary based on the information currently available.</p></div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-date">Current</div>
+          <div><h3>Senior Software Engineer · Virtusa</h3><p>Mobile engineering with a focus on React Native. Previously worked with Wiley Sri Lanka / Wiley Global Technologies. Add exact employment dates and your preferred public description before publishing.</p></div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-date">Earlier experience</div>
+          <div><h3>Software engineering roles</h3><p>Earlier experience includes software development work at Vizumatix and an IT internship at the National Institute of Education. Add exact titles and dates if you want these listed publicly.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Selected work</div><h2>Featured projects</h2><p>A selection of engineering work and interests.</p></div>
+      <div class="two-col">
+        <article class="panel project">
+          <div class="tagline">Open source · Android</div>
+          <h3>RCBBoard</h3>
+          <p>An independent HeliBoard fork focused on keyboard customisation, Sinhala language support and privacy-conscious development.</p>
+          <div class="chips"><span class="chip">Android</span><span class="chip">Kotlin</span><span class="chip">Open source</span></div>
+          <p><a href="https://github.com/Rananjaya" target="_blank" rel="noreferrer">Find RCBBoard on GitHub ↗</a></p>
+        </article>
+        <article class="panel project">
+          <div class="tagline">Engineering focus</div>
+          <h3>AI-native engineering</h3>
+          <p>Exploring agentic engineering, orchestration, AI-assisted development and architecture through practical learning and project work.</p>
+          <div class="chips"><span class="chip">AI agents</span><span class="chip">Claude Code</span><span class="chip">Architecture</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Education</div><h2>Academic background</h2></div>
+      <div class="panel education">
+        <div class="education-item"><h3>Postgraduate Diploma in Information Technology</h3><p>SLIIT</p></div>
+        <div class="education-item"><h3>BSc in Management Information Systems</h3><p>Add institution and graduation year if you want them displayed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Contact</div><h2>Let's connect</h2><p>For professional conversations, collaboration and open-source discussions.</p></div>
+      <div class="contact">
+        <a class="btn primary" href="https://github.com/Rananjaya" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="btn" href="https://x.com/rananjayab" target="_blank" rel="noreferrer">X ↗</a>
+        <!-- Add your LinkedIn URL and professional email before publishing. -->
+        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn — add profile URL</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> Rananjaya. Built with care.</div></footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
